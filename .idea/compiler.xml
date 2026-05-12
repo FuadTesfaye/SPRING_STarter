@@ -6,13 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="task-app" />
+        <module name="auth-service" />
+        <module name="inventory-service" />
+        <module name="order-service" />
+        <module name="payment-service" />
+        <module name="notification-service" />
+        <module name="shipping-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="task-app" options="-parameters" />
+      <module name="task-app" options="" />
     </option>
   </component>
 </project>
