@@ -1,0 +1,16 @@
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/OrderCreatedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/infrastructure/config/RabbitMQConfig.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/infrastructure/messaging/AllEventsConsumer.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/ShipmentCreatedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/StockFailedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/model/Notification.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/infrastructure/persistence/JpaNotificationRepository.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/application/service/NotificationService.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/StockReservedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/PaymentFailedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/UserRegisteredEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/repository/NotificationRepository.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/NotificationServiceApplication.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/domain/event/PaymentCompletedEvent.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/infrastructure/persistence/SpringDataNotificationRepository.java
+/home/xfactertesma/ecommerce-system/notification-service/src/main/java/com/ecommerce/notification/presentation/controller/NotificationController.java

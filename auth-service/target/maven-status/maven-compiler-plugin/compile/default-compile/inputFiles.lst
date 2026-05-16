@@ -1,0 +1,17 @@
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/domain/repository/UserRepository.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/security/JwtUtil.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/AuthServiceApplication.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/domain/event/UserRegisteredEvent.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/persistence/JpaUserRepository.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/persistence/SpringDataUserRepository.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/presentation/dto/LoginRequest.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/application/service/AuthService.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/config/RabbitMQConfig.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/messaging/RabbitMQEventPublisher.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/presentation/dto/RegisterRequest.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/presentation/controller/AuthController.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/application/port/EventPublisher.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/presentation/dto/AuthResponse.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/domain/model/User.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/presentation/controller/GlobalExceptionHandler.java
+/home/xfactertesma/ecommerce-system/auth-service/src/main/java/com/ecommerce/auth/infrastructure/config/SecurityConfig.java

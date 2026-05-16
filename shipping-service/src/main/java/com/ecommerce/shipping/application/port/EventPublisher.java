@@ -1,0 +1,5 @@
+package com.ecommerce.shipping.application.port;
+
+public interface EventPublisher {
+    void publish(String routingKey, Object event);
+}

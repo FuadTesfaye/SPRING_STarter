@@ -1,0 +1,15 @@
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/PaymentServiceApplication.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/infrastructure/persistence/JpaPaymentRepository.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/repository/PaymentRepository.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/event/PaymentFailedEvent.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/event/PaymentCompletedEvent.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/presentation/controller/PaymentController.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/infrastructure/config/RabbitMQConfig.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/infrastructure/persistence/SpringDataPaymentRepository.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/application/service/PaymentService.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/model/Payment.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/application/port/EventPublisher.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/model/PaymentStatus.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/infrastructure/messaging/RabbitMQEventPublisher.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/infrastructure/messaging/OrderCreatedConsumer.java
+/home/xfactertesma/ecommerce-system/payment-service/src/main/java/com/ecommerce/payment/domain/event/OrderCreatedEvent.java

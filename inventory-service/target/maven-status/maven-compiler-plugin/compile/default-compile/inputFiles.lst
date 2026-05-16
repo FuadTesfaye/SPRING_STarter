@@ -1,0 +1,16 @@
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/domain/event/StockFailedEvent.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/messaging/RabbitMQEventPublisher.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/domain/event/StockReservedEvent.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/InventoryServiceApplication.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/domain/repository/InventoryRepository.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/presentation/dto/AddStockRequest.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/persistence/DataInitializer.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/application/port/EventPublisher.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/application/service/InventoryService.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/persistence/JpaInventoryRepository.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/messaging/OrderCreatedConsumer.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/config/RabbitMQConfig.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/domain/event/OrderCreatedEvent.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/infrastructure/persistence/SpringDataInventoryRepository.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/presentation/controller/InventoryController.java
+/home/xfactertesma/ecommerce-system/inventory-service/src/main/java/com/ecommerce/inventory/domain/model/Inventory.java

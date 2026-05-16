@@ -1,0 +1,15 @@
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/presentation/controller/OrderController.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/domain/repository/OrderRepository.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/infrastructure/persistence/JpaOrderRepository.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/domain/event/OrderCreatedEvent.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/OrderServiceApplication.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/presentation/dto/CreateOrderRequest.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/infrastructure/config/RabbitMQConfig.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/application/port/EventPublisher.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/presentation/controller/GlobalExceptionHandler.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/infrastructure/messaging/RabbitMQEventPublisher.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/application/service/OrderService.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/domain/model/OrderStatus.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/domain/model/Order.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/infrastructure/persistence/SpringDataOrderRepository.java
+/home/xfactertesma/ecommerce-system/order-service/src/main/java/com/ecommerce/order/presentation/dto/OrderResponse.java
