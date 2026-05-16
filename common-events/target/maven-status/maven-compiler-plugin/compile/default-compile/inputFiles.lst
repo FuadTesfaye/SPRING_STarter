@@ -1,0 +1,10 @@
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\EventExchange.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\EventRoutingKeys.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\OrderCreatedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\PaymentCompletedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\PaymentFailedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\QueueNames.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\ShipmentCreatedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\StockFailedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\StockReservedEvent.java
+C:\Users\hayat\SPRING_STarter\common-events\src\main\java\com\example\events\UserRegisteredEvent.java

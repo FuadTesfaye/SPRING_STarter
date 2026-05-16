@@ -1,0 +1,8 @@
+package com.example.shipping.domain.model;
+
+public enum ShipmentStatus {
+    CREATED,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}

@@ -1,0 +1,10 @@
+com\example\events\StockFailedEvent.class
+com\example\events\StockReservedEvent.class
+com\example\events\QueueNames.class
+com\example\events\UserRegisteredEvent.class
+com\example\events\ShipmentCreatedEvent.class
+com\example\events\EventExchange.class
+com\example\events\EventRoutingKeys.class
+com\example\events\OrderCreatedEvent.class
+com\example\events\PaymentCompletedEvent.class
+com\example\events\PaymentFailedEvent.class
