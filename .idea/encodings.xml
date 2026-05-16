@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$APPLICATION_HOME_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$APPLICATION_HOME_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/AuthService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/AuthService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/AuthService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/AuthService.Infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/AuthService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/InventoryService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/InventoryService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/InventoryService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/InventoryService.Infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/PaymentService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/PaymentService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/PaymentService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/PaymentService.Infrastructure/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/Shared.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/Shared.Messaging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

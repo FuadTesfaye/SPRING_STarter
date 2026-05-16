@@ -1,0 +1,8 @@
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\UserRegisteredEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\ShipmentCreatedEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\StockReservedEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\StockFailedEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\BaseEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\PaymentFailedEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\PaymentCompletedEvent.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\Shared\Shared.Messaging\src\main\java\com\ecommerce\shared\messaging\event\OrderCreatedEvent.java

@@ -46,7 +46,7 @@ public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase
                 .token("mock-jwt-token")
                 .message("User registered successfully")
                 .build();
-    @Override
+    }@Override
     public AuthResponse login(LoginRequest request) {
         return userRepository.findByEmail(request.getEmail())
                 .filter(user -> user.getPassword().equals(request.getPassword())) // In real app, use BCrypt

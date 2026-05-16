@@ -6,13 +6,44 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="task-app" />
+        <module name="payment-infrastructure" />
+        <module name="auth-domain" />
+        <module name="shared-domain" />
+        <module name="inventory-api" />
+        <module name="payment-api" />
+        <module name="auth-application" />
+        <module name="shared-messaging" />
+        <module name="payment-domain" />
+        <module name="auth-infrastructure" />
+        <module name="payment-application" />
+        <module name="inventory-application" />
+        <module name="auth-api" />
+        <module name="inventory-infrastructure" />
+        <module name="inventory-domain" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ecommerce-system" target="1.5" />
+      <module name="task-app" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="task-app" options="-parameters" />
+      <module name="auth-api" options="-parameters" />
+      <module name="auth-application" options="-parameters" />
+      <module name="auth-domain" options="-parameters" />
+      <module name="auth-infrastructure" options="-parameters" />
+      <module name="inventory-api" options="-parameters" />
+      <module name="inventory-application" options="-parameters" />
+      <module name="inventory-domain" options="-parameters" />
+      <module name="inventory-infrastructure" options="-parameters" />
+      <module name="payment-api" options="-parameters" />
+      <module name="payment-application" options="-parameters" />
+      <module name="payment-domain" options="-parameters" />
+      <module name="payment-infrastructure" options="-parameters" />
+      <module name="shared-domain" options="-parameters" />
+      <module name="shared-messaging" options="-parameters" />
+      <module name="task-app" options="" />
     </option>
   </component>
 </project>
