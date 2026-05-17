@@ -1,0 +1,30 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: notification-service
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+
+app:
+  rabbitmq:
+    exchange: app.exchange
+    queue:
+      user-registered: user.registered.queue
+      order-created: order.created.queue
+      payment-completed: payment.completed.queue
+      payment-failed: payment.failed.queue
+      stock-reserved: stock.reserved.queue
+      stock-failed: stock.failed.queue
+      shipment-created: shipment.created.queue
+
+logging:
+  level:
+    com.microservices.notification: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
