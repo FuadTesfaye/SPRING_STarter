@@ -1,0 +1,4 @@
+package com.example.paymentservice.infrastructure.persistence;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.UUID;
+public interface PaymentJpaRepository extends JpaRepository<PaymentEntity, UUID> {}
