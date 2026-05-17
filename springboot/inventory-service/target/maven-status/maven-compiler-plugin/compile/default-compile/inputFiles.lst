@@ -1,0 +1,13 @@
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\messaging\RabbitMQConfig.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\domain\StockItem.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\config\AppConfig.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\persistence\InventoryRepositoryImpl.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\application\ports\InventoryEventPublisher.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\InventoryServiceApplication.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\messaging\OrderCreatedEvent.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\messaging\OrderCreatedListener.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\domain\StockFailed.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\application\usecases\ReserveStockUseCase.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\domain\StockReserved.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\infrastructure\messaging\RabbitMQInventoryEventPublisher.java
+C:\Users\anafc\Documents\java\springboot\inventory-service\src\main\java\com\app\inventory\domain\InventoryRepository.java

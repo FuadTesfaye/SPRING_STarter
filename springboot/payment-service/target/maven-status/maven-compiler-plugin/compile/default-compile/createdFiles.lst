@@ -1,0 +1,15 @@
+com\app\payment\infrastructure\messaging\RabbitMQPaymentEventPublisher.class
+com\app\payment\infrastructure\config\AppConfig.class
+com\app\payment\domain\PaymentFailed.class
+com\app\payment\infrastructure\persistence\PaymentEntity.class
+com\app\payment\infrastructure\messaging\OrderCreatedEvent.class
+com\app\payment\application\ports\PaymentEventPublisher.class
+com\app\payment\domain\Payment.class
+com\app\payment\infrastructure\persistence\PaymentRepositoryImpl.class
+com\app\payment\domain\PaymentCompleted.class
+com\app\payment\infrastructure\messaging\OrderCreatedListener.class
+com\app\payment\infrastructure\messaging\RabbitMQConfig.class
+com\app\payment\application\usecases\ProcessPaymentUseCase.class
+com\app\payment\PaymentServiceApplication.class
+com\app\payment\infrastructure\persistence\SpringDataPaymentRepository.class
+com\app\payment\domain\PaymentRepository.class

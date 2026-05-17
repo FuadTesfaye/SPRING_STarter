@@ -1,0 +1,13 @@
+com\app\inventory\domain\StockFailed.class
+com\app\inventory\domain\StockReserved.class
+com\app\inventory\infrastructure\config\AppConfig.class
+com\app\inventory\infrastructure\persistence\InventoryRepositoryImpl.class
+com\app\inventory\application\usecases\ReserveStockUseCase.class
+com\app\inventory\infrastructure\messaging\OrderCreatedListener.class
+com\app\inventory\infrastructure\messaging\OrderCreatedEvent.class
+com\app\inventory\infrastructure\messaging\RabbitMQConfig.class
+com\app\inventory\infrastructure\messaging\RabbitMQInventoryEventPublisher.class
+com\app\inventory\domain\InventoryRepository.class
+com\app\inventory\application\ports\InventoryEventPublisher.class
+com\app\inventory\InventoryServiceApplication.class
+com\app\inventory\domain\StockItem.class

@@ -1,0 +1,15 @@
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\messaging\ShippingEventListeners.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\application\ports\ShippingEventPublisher.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\application\usecases\CreateShipmentUseCase.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\domain\ShipmentCreated.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\messaging\StockReservedEvent.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\messaging\PaymentCompletedEvent.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\persistence\SpringDataShipmentRepository.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\config\AppConfig.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\domain\ShipmentRepository.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\domain\Shipment.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\persistence\ShipmentRepositoryImpl.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\messaging\RabbitMQConfig.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\messaging\RabbitMQShippingEventPublisher.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\ShippingServiceApplication.java
+C:\Users\anafc\Documents\java\springboot\shipping-service\src\main\java\com\app\shipping\infrastructure\persistence\ShipmentEntity.java

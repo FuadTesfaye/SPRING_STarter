@@ -1,0 +1,15 @@
+com\app\shipping\application\ports\ShippingEventPublisher.class
+com\app\shipping\domain\ShipmentRepository.class
+com\app\shipping\infrastructure\persistence\ShipmentRepositoryImpl.class
+com\app\shipping\domain\Shipment.class
+com\app\shipping\infrastructure\config\AppConfig.class
+com\app\shipping\infrastructure\messaging\ShippingEventListeners.class
+com\app\shipping\domain\ShipmentCreated.class
+com\app\shipping\infrastructure\messaging\StockReservedEvent.class
+com\app\shipping\infrastructure\messaging\PaymentCompletedEvent.class
+com\app\shipping\infrastructure\messaging\RabbitMQConfig.class
+com\app\shipping\infrastructure\persistence\SpringDataShipmentRepository.class
+com\app\shipping\infrastructure\persistence\ShipmentEntity.class
+com\app\shipping\infrastructure\messaging\RabbitMQShippingEventPublisher.class
+com\app\shipping\ShippingServiceApplication.class
+com\app\shipping\application\usecases\CreateShipmentUseCase.class
