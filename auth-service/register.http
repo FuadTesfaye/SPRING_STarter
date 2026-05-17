@@ -1,0 +1,11 @@
+### POST request to example server
+POST http://localhost:8081/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "newuser@email.com",
+  "username": "newuser",
+  "password": "password123"
+}
+
+###
