@@ -1,0 +1,2 @@
+com\microservices\inventoryservice\application\event\PaymentEvent.class
+com\microservices\inventoryservice\application\event\InventoryEvent.class

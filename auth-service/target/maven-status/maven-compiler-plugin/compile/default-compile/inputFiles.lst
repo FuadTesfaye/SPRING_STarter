@@ -1,0 +1,11 @@
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\application\service\AuthService.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\application\service\UserRegisteredEvent.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\AuthServiceApplication.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\domain\model\User.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\domain\port\UserRepositoryPort.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\infrastructure\config\AppConfig.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\infrastructure\messaging\RabbitMQConfig.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\infrastructure\persistence\UserEntity.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\infrastructure\persistence\UserJpaRepository.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\infrastructure\persistence\UserRepositoryAdapter.java
+C:\Users\HP\Documents\SPRING_STarter\auth-service\src\main\java\com\example\auth\presentation\controller\AuthController.java

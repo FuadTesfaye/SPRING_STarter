@@ -1,5 +1,4 @@
 package com.microservices.orderservice.application.event;
-
 public class OrderCreatedEvent {
 
     private String username;

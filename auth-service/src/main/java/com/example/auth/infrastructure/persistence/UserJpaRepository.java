@@ -1,4 +1,4 @@
-package com.microservices.authservice.infrastructure.persistence;
+package com.example.auth.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

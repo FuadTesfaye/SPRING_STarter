@@ -1,5 +1,4 @@
-package com.microservices.authservice.domain.model;
-
+package com.example.auth.domain.model;
 public class User {
 
     private String username;

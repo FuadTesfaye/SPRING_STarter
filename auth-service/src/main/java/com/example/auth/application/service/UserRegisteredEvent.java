@@ -1,4 +1,4 @@
-package com.microservices.authservice.application.service;
+package com.example.auth.application.service;
 
 public class UserRegisteredEvent {
 
@@ -13,5 +13,9 @@ public class UserRegisteredEvent {
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

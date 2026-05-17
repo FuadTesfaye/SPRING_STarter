@@ -1,0 +1,10 @@
+com\example\auth\infrastructure\config\AppConfig.class
+com\example\auth\domain\model\User.class
+com\example\auth\infrastructure\persistence\UserEntity.class
+com\example\auth\domain\port\UserRepositoryPort.class
+com\example\auth\infrastructure\persistence\UserRepositoryAdapter.class
+com\example\auth\presentation\controller\AuthController.class
+com\example\auth\application\service\UserRegisteredEvent.class
+com\example\auth\AuthServiceApplication.class
+com\example\auth\application\service\AuthService.class
+com\example\auth\infrastructure\persistence\UserJpaRepository.class

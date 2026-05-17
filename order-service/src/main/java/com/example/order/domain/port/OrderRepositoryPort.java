@@ -1,8 +1,7 @@
-package com.microservices.orderservice.domain.port;
+package com.example.order.domain.port;
 
-import com.microservices.orderservice.domain.model.Order;
+import com.example.order.domain.model.Order;
 
 public interface OrderRepositoryPort {
-
     Order save(Order order);
 }

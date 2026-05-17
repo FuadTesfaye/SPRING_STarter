@@ -1,7 +1,7 @@
-package com.microservices.authservice.infrastructure.persistence;
+package com.example.auth.infrastructure.persistence;
 
-import com.microservices.authservice.domain.model.User;
-import com.microservices.authservice.domain.port.UserRepositoryPort;
+import com.example.auth.domain.model.User;
+import com.example.auth.domain.port.UserRepositoryPort;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,14 +15,10 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
 
     @Override
     public User save(User user) {
-
         UserEntity entity = new UserEntity();
-
         entity.setUsername(user.getUsername());
         entity.setPassword(user.getPassword());
-
         repository.save(entity);
-
         return user;
     }
 }

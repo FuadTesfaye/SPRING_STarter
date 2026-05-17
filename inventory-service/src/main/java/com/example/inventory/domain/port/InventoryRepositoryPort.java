@@ -1,4 +1,7 @@
 package com.example.inventory.domain.port;
 
-public class InventoryRepositoryPort {
+import com.example.inventory.domain.model.Inventory;
+
+public interface InventoryRepositoryPort {
+    Inventory save(Inventory inventory);
 }

@@ -1,4 +1,4 @@
-package com.microservices.notificationservice.application.service;
+package com.example.notification.application.service;
 
 import org.springframework.stereotype.Service;
 
@@ -6,9 +6,6 @@ import org.springframework.stereotype.Service;
 public class NotificationService {
 
     public void sendNotification(String username) {
-
-        System.out.println(
-                "Notification sent to: " + username
-        );
+        System.out.println("Notification sent to: " + username);
     }
 }

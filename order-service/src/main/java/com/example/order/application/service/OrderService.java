@@ -1,36 +1,25 @@
-package com.microservices.orderservice.application.service;
+package com.example.order.application.service;
 
-import com.microservices.orderservice.application.event.OrderCreatedEvent;
-import com.microservices.orderservice.domain.model.Order;
-import com.microservices.orderservice.domain.port.OrderRepositoryPort;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import com.example.order.domain.model.Order;
+import com.example.order.domain.port.OrderRepositoryPort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class OrderService {
 
     private final OrderRepositoryPort repository;
-    private final RabbitTemplate rabbitTemplate;
+    private final RestTemplate restTemplate;
 
-    public OrderService(
-            OrderRepositoryPort repository,
-            RabbitTemplate rabbitTemplate) {
-
+    public OrderService(OrderRepositoryPort repository, RestTemplate restTemplate) {
         this.repository = repository;
-        this.rabbitTemplate = rabbitTemplate;
+        this.restTemplate = restTemplate;
     }
 
     public void createOrder(String username) {
-
-        Order order =
-                new Order(username, "CREATED");
-
+        Order order = new Order(username, "CREATED");
         repository.save(order);
-
-        rabbitTemplate.convertAndSend(
-                "app.exchange",
-                "order.created",
-                new OrderCreatedEvent(username)
-        );
+        System.out.println("Order created for: " + username);
+        restTemplate.postForObject("http://localhost:8083/payments/process?username=" + username, null, String.class);
     }
 }

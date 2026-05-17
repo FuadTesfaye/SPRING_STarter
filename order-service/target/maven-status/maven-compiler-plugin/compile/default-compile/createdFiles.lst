@@ -1,0 +1,11 @@
+com\example\order\application\service\OrderService.class
+com\microservices\orderservice\application\event\UserRegisteredEvent.class
+com\example\order\infrastructure\persistence\OrderRepositoryAdapter.class
+com\example\order\OrderServiceApplication.class
+com\example\order\domain\port\OrderRepositoryPort.class
+com\example\order\infrastructure\config\AppConfig.class
+com\example\order\domain\model\Order.class
+com\example\order\infrastructure\persistence\OrderJpaRepository.class
+com\example\order\infrastructure\persistence\OrderEntity.class
+com\example\order\presentation\controller\OrderController.class
+com\microservices\orderservice\application\event\OrderCreatedEvent.class

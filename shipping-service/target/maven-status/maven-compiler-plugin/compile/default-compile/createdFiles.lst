@@ -1,0 +1,2 @@
+com\microservices\shippingservice\application\event\InventoryEvent.class
+com\microservices\shippingservice\application\event\ShippingEvent.class

@@ -1,36 +1,25 @@
-package com.microservices.paymentservice.application.service;
+package com.example.payment.application.service;
 
-import com.microservices.paymentservice.application.event.PaymentEvent;
-import com.microservices.paymentservice.domain.model.Payment;
-import com.microservices.paymentservice.domain.port.PaymentRepositoryPort;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import com.example.payment.domain.model.Payment;
+import com.example.payment.domain.port.PaymentRepositoryPort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class PaymentService {
 
     private final PaymentRepositoryPort repository;
-    private final RabbitTemplate rabbitTemplate;
+    private final RestTemplate restTemplate;
 
-    public PaymentService(
-            PaymentRepositoryPort repository,
-            RabbitTemplate rabbitTemplate) {
-
+    public PaymentService(PaymentRepositoryPort repository, RestTemplate restTemplate) {
         this.repository = repository;
-        this.rabbitTemplate = rabbitTemplate;
+        this.restTemplate = restTemplate;
     }
 
     public void processPayment(String username) {
-
-        Payment payment =
-                new Payment(username, "SUCCESS");
-
+        Payment payment = new Payment(username, "SUCCESS");
         repository.save(payment);
-
-        rabbitTemplate.convertAndSend(
-                "app.exchange",
-                "payment.success",
-                new PaymentEvent(username)
-        );
+        System.out.println("Payment processed for: " + username);
+        restTemplate.postForObject("http://localhost:8084/inventory/update?username=" + username, null, String.class);
     }
 }

@@ -1,4 +1,4 @@
-package com.microservices.orderservice.infrastructure.persistence;
+package com.example.order.infrastructure.persistence;
 
 import jakarta.persistence.*;
 
@@ -13,23 +13,9 @@ public class OrderEntity {
     private String username;
     private String status;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
+    public Long getId() { return id; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }

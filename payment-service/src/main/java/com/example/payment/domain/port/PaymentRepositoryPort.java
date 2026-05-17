@@ -1,8 +1,7 @@
-package com.microservices.paymentservice.domain.port;
+package com.example.payment.domain.port;
 
-import com.microservices.paymentservice.domain.model.Payment;
+import com.example.payment.domain.model.Payment;
 
 public interface PaymentRepositoryPort {
-
     Payment save(Payment payment);
 }

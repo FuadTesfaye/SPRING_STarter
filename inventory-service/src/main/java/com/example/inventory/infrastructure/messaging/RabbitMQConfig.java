@@ -1,4 +1,2 @@
-package com.example.inventory.infrastructure.messaging;
-
-public class RabbitMQConfig {
-}
+package com.microservices.inventoryservice.infrastructure.messaging;
+// RabbitMQ removed - using direct REST API calls

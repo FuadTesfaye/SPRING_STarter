@@ -1,4 +1,2 @@
-package com.example.inventory.infrastructure.messaging;
-
-public class InventoryEventListener {
-}
+package com.microservices.inventoryservice.infrastructure.messaging;
+// RabbitMQ listener removed - using direct REST API calls

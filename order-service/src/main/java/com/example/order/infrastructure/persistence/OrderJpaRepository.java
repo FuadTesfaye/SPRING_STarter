@@ -1,7 +1,6 @@
-package com.microservices.orderservice.infrastructure.persistence;
+package com.example.order.infrastructure.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderJpaRepository
-        extends JpaRepository<OrderEntity, Long> {
+public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long> {
 }

@@ -1,0 +1,13 @@
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\application\event\InventoryEvent.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\application\event\ShippingEvent.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\application\service\ShippingService.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\domain\model\Shipping.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\domain\port\ShippingRepositoryPort.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\config\AppConfig.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\messaging\RabbitMQConfig.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\messaging\ShippingEventListener.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\persisitence\ShippingEntity.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\persisitence\ShippingJpaRepository.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\infrastructure\persisitence\ShippingRepositoryAdapter.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\presentation\controller\ShippingController.java
+C:\Users\HP\Documents\SPRING_STarter\shipping-service\src\main\java\com\example\shipping\ShippingServiceApplication.java

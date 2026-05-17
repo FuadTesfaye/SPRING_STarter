@@ -1,0 +1,13 @@
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\application\event\InventoryEvent.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\application\event\PaymentEvent.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\application\service\InventoryService.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\domain\model\Inventory.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\domain\port\InventoryRepositoryPort.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\config\AppConfig.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\messaging\InventoryEventListener.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\messaging\RabbitMQConfig.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\persistance\InventoryEntity.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\persistance\InventoryJpaRepository.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\infrastructure\persistance\InventoryRepositoryAdapter.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\InventoryServiceApplication.java
+C:\Users\HP\Documents\SPRING_STarter\inventory-service\src\main\java\com\example\inventory\presentation\controller\InventoryController.java

@@ -1,4 +1,6 @@
 package com.example.inventory.infrastructure.persistance;
 
-public class InventoryJpaRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface InventoryJpaRepository extends JpaRepository<InventoryEntity, Long> {
 }

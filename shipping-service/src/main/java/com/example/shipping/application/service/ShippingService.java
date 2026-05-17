@@ -1,36 +1,25 @@
-package com.microservices.shippingservice.application.service;
+package com.example.shipping.application.service;
 
-import com.microservices.shippingservice.application.event.ShippingEvent;
-import com.microservices.shippingservice.domain.model.Shipping;
-import com.microservices.shippingservice.domain.port.ShippingRepositoryPort;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import com.example.shipping.domain.model.Shipping;
+import com.example.shipping.domain.port.ShippingRepositoryPort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ShippingService {
 
     private final ShippingRepositoryPort repository;
-    private final RabbitTemplate rabbitTemplate;
+    private final RestTemplate restTemplate;
 
-    public ShippingService(
-            ShippingRepositoryPort repository,
-            RabbitTemplate rabbitTemplate) {
-
+    public ShippingService(ShippingRepositoryPort repository, RestTemplate restTemplate) {
         this.repository = repository;
-        this.rabbitTemplate = rabbitTemplate;
+        this.restTemplate = restTemplate;
     }
 
     public void createShipping(String username) {
-
-        Shipping shipping =
-                new Shipping(username, "SHIPPED");
-
+        Shipping shipping = new Shipping(username, "SHIPPED");
         repository.save(shipping);
-
-        rabbitTemplate.convertAndSend(
-                "app.exchange",
-                "shipping.created",
-                new ShippingEvent(username)
-        );
+        System.out.println("Shipping created for: " + username);
+        restTemplate.postForObject("http://localhost:8086/notifications/send?username=" + username, null, String.class);
     }
 }

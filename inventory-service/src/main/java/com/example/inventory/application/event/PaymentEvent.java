@@ -1,4 +1,17 @@
-package com.example.inventory.application.event;
+package com.microservices.inventoryservice.application.event;
 
 public class PaymentEvent {
+
+    private String username;
+
+    public PaymentEvent() {
+    }
+
+    public PaymentEvent(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }

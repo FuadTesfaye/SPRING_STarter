@@ -1,0 +1,2 @@
+com\microservices\paymentservice\application\event\PaymentEvent.class
+com\microservices\paymentservice\application\event\OrderCreatedEvent.class
