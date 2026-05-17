@@ -1,9 +1,11 @@
 package com.example.task.order;
 
+import com.example.task.order.dto.CreateOrderRequest;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.UUID;
 
 @RestController
 public class OrderController {
@@ -14,12 +16,13 @@ public class OrderController {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @GetMapping("/create-order")
-    public String createOrder(@RequestParam String customerName, @RequestParam String item) {
-        String eventMessage = "Order created for " + customerName + " buying " + item;
+    @PostMapping("/orders")
+    public String createOrder(@RequestBody CreateOrderRequest request) {
+        String orderId = UUID.randomUUID().toString();
+        String eventMessage = "Order " + orderId + " created for Customer " + request.getCustomerId();
 
         rabbitTemplate.convertAndSend("notificationQueue", eventMessage);
 
-        return "Order received successfully! Notification service will print it shortly.";
+        return "Order created successfully with ID: " + orderId;
     }
 }
