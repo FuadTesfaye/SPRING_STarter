@@ -1,7 +1,6 @@
 package com.example.apigateway.application.usecases;
 
 import com.example.apigateway.application.dto.response.GatewayRouteResponse;
-import com.example.apigateway.application.usecases.GetGatewayRoutesService;
 import com.example.apigateway.domain.interfaces.RouteCatalogRepository;
 import com.example.apigateway.domain.services.RouteCatalogDomainService;
 import java.util.List;

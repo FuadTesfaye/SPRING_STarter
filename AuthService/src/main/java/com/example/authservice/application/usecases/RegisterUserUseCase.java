@@ -6,7 +6,7 @@ import com.example.authservice.application.handlers.ConflictException;
 import com.example.authservice.domain.entities.User;
 import com.example.authservice.domain.interfaces.UserRepository;
 import com.example.authservice.domain.services.AuthDomainService;
-import com.example.authservice.application.usecases.RegisterUserService;
+
 
 public class RegisterUserUseCase implements RegisterUserService {
 

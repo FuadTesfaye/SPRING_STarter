@@ -6,7 +6,7 @@ import com.example.authservice.application.handlers.UnauthorizedException;
 import com.example.authservice.domain.entities.User;
 import com.example.authservice.domain.interfaces.UserRepository;
 import com.example.authservice.domain.services.AuthDomainService;
-import com.example.authservice.application.usecases.LoginUserService;
+
 
 public class LoginUserUseCase implements LoginUserService {
 
