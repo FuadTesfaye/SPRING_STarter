@@ -1,0 +1,126 @@
+version: '3.8'
+
+services:
+  # RabbitMQ Message Broker
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin123
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - microservices-network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PostgreSQL for Auth Service
+  auth-db:
+    image: postgres:16-alpine
+    container_name: auth-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=auth_db
+      - POSTGRES_USER=auth_user
+      - POSTGRES_PASSWORD=auth_pass
+    volumes:
+      - auth_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # PostgreSQL for Order Service
+  order-db:
+    image: postgres:16-alpine
+    container_name: order-db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=order_db
+      - POSTGRES_USER=order_user
+      - POSTGRES_PASSWORD=order_pass
+    volumes:
+      - order_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # PostgreSQL for Payment Service
+  payment-db:
+    image: postgres:16-alpine
+    container_name: payment-db
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_DB=payment_db
+      - POSTGRES_USER=payment_user
+      - POSTGRES_PASSWORD=payment_pass
+    volumes:
+      - payment_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # PostgreSQL for Inventory Service
+  inventory-db:
+    image: postgres:16-alpine
+    container_name: inventory-db
+    ports:
+      - "5435:5432"
+    environment:
+      - POSTGRES_DB=inventory_db
+      - POSTGRES_USER=inventory_user
+      - POSTGRES_PASSWORD=inventory_pass
+    volumes:
+      - inventory_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # PostgreSQL for Shipping Service
+  shipping-db:
+    image: postgres:16-alpine
+    container_name: shipping-db
+    ports:
+      - "5436:5432"
+    environment:
+      - POSTGRES_DB=shipping_db
+      - POSTGRES_USER=shipping_user
+      - POSTGRES_PASSWORD=shipping_pass
+    volumes:
+      - shipping_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+  # PostgreSQL for Notification Service
+  notification-db:
+    image: postgres:16-alpine
+    container_name: notification-db
+    ports:
+      - "5437:5432"
+    environment:
+      - POSTGRES_DB=notification_db
+      - POSTGRES_USER=notification_user
+      - POSTGRES_PASSWORD=notification_pass
+    volumes:
+      - notification_db_data:/var/lib/postgresql/data
+    networks:
+      - microservices-network
+
+volumes:
+  rabbitmq_data:
+  auth_db_data:
+  order_db_data:
+  payment_db_data:
+  inventory_db_data:
+  shipping_db_data:
+  notification_db_data:
+
+networks:
+  microservices-network:
+    driver: bridge
+    name: microservices-network

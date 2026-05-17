@@ -1,0 +1,49 @@
+# Common configuration for all services
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+
+# RabbitMQ Exchange Configuration
+app:
+  rabbitmq:
+    exchange: app.exchange
+    queues:
+      user-registered: user.registered.queue
+      order-created: order.created.queue
+      payment-completed: payment.completed.queue
+      payment-failed: payment.failed.queue
+      stock-reserved: stock.reserved.queue
+      stock-failed: stock.failed.queue
+      shipment-created: shipment.created.queue
+    routing-keys:
+      user-registered: user.registered
+      order-created: order.created
+      payment-completed: payment.completed
+      payment-failed: payment.failed
+      stock-reserved: stock.reserved
+      stock-failed: stock.failed
+      shipment-created: shipment.created
+
+# Server Configuration
+server:
+  port: 8080
+
+# Logging
+logging:
+  level:
+    com.microservices: DEBUG
+    org.springframework.amqp: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
