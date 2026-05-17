@@ -1,4 +1,4 @@
-# H2 databases
+# Local database files
 *.mv.db
 *.trace.db
 
