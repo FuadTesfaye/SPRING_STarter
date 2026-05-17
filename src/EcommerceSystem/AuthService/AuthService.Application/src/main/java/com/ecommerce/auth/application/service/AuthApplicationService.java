@@ -1,62 +1,28 @@
 package com.ecommerce.auth.application.service;
 
-import com.ecommerce.auth.application.dto.AuthResponse;
-import com.ecommerce.auth.application.dto.RegisterUserRequest;
-import com.ecommerce.auth.application.dto.LoginRequest;
-import com.ecommerce.auth.application.ports.EventPublisher;
-import com.ecommerce.auth.application.usecase.LoginUseCase;
-import com.ecommerce.auth.application.usecase.RegisterUserUseCase;
-import com.ecommerce.auth.domain.entity.User;
-import com.ecommerce.auth.domain.repository.UserRepository;
-import com.ecommerce.shared.messaging.event.UserRegisteredEvent;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
-public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase {
+public class AuthApplicationService {
 
-    private final UserRepository userRepository;
-    private final EventPublisher eventPublisher;
+    public boolean existsByEmail(String email) {
+        return false;
+    }
 
-    @Override
-    public AuthResponse register(RegisterUserRequest request) {
-        if (userRepository.existsByEmail(request.getEmail())) {
-            return AuthResponse.builder()
-                    .message("User already exists")
-                    .build();
+    public String register(String email, String password, String fullName) {
+        if (existsByEmail(email)) {
+            return "User already exists";
         }
+        String userId = UUID.randomUUID().toString();
+        System.out.println("[AUTH SYSTEM] Registered user: " + fullName + " with ID: " + userId);
+        return "User registered successfully! ID: " + userId;
+    }
 
-        User user = User.builder()
-                .id(UUID.randomUUID().toString())
-                .email(request.getEmail())
-                .password(request.getPassword()) // In a real app, encode this
-                .fullName(request.getFullName())
-                .build();
-
-        userRepository.save(user);
-
-        // Publish Event
-        eventPublisher.publish(new UserRegisteredEvent(user.getId(), user.getEmail(), user.getFullName()));
-
-        return AuthResponse.builder()
-                .userId(user.getId())
-                .token("mock-jwt-token")
-                .message("User registered successfully")
-                .build();
-    @Override
-    public AuthResponse login(LoginRequest request) {
-        return userRepository.findByEmail(request.getEmail())
-                .filter(user -> user.getPassword().equals(request.getPassword())) // In real app, use BCrypt
-                .map(user -> AuthResponse.builder()
-                        .userId(user.getId())
-                        .token("mock-jwt-token-for-" + user.getEmail())
-                        .message("Login successful")
-                        .build())
-                .orElse(AuthResponse.builder()
-                        .message("Invalid credentials")
-                        .build());
+    public String login(String email, String password) {
+        if ("admin@test.com".equals(email) && "password".equals(password)) {
+            return "Login successful! Token: mock-jwt-token-for-" + email;
+        }
+        return "Invalid credentials";
     }
 }

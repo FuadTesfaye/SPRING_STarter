@@ -1,8 +1,8 @@
-version: '3.8'
+
 
 services:
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:3
     container_name: assignment_rabbitmq
     ports:
       - "5672:5672"
