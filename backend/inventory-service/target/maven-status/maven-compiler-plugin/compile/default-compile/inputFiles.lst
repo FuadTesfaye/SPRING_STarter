@@ -1,0 +1,16 @@
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\OrderCreatedEventDto.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\config\SwaggerConfig.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationJpaEntity.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\InventoryServiceApplication.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\entity\StockReservation.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\config\RabbitMQConfig.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\port\StockReservationRepository.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\event\StockFailedEvent.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationJpaRepository.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\port\EventPublisher.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\InventoryEventListener.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationRepositoryImpl.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\presentation\controller\InventoryController.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\RabbitMQEventPublisher.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\event\StockReservedEvent.java
+D:\Projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\service\InventoryService.java

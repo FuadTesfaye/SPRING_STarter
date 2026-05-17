@@ -1,0 +1,7 @@
+com\school\notification\application\service\NotificationService.class
+com\school\notification\NotificationServiceApplication.class
+com\school\notification\infrastructure\config\SwaggerConfig.class
+com\school\notification\presentation\controller\NotificationController.class
+com\school\notification\infrastructure\config\RabbitMQConfig.class
+com\school\notification\infrastructure\messaging\NotificationEventListener.class
+com\school\notification\domain\event\GenericEventDto.class

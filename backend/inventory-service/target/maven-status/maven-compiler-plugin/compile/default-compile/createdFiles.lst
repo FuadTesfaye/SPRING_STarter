@@ -1,0 +1,16 @@
+com\school\inventory\infrastructure\persistence\StockReservationJpaRepository.class
+com\school\inventory\domain\event\StockReservedEvent.class
+com\school\inventory\application\service\InventoryService.class
+com\school\inventory\infrastructure\config\SwaggerConfig.class
+com\school\inventory\application\port\EventPublisher.class
+com\school\inventory\infrastructure\messaging\RabbitMQEventPublisher.class
+com\school\inventory\application\port\StockReservationRepository.class
+com\school\inventory\infrastructure\persistence\StockReservationRepositoryImpl.class
+com\school\inventory\infrastructure\messaging\InventoryEventListener.class
+com\school\inventory\infrastructure\config\RabbitMQConfig.class
+com\school\inventory\domain\event\StockFailedEvent.class
+com\school\inventory\infrastructure\persistence\StockReservationJpaEntity.class
+com\school\inventory\InventoryServiceApplication.class
+com\school\inventory\domain\entity\StockReservation.class
+com\school\inventory\infrastructure\messaging\OrderCreatedEventDto.class
+com\school\inventory\presentation\controller\InventoryController.class

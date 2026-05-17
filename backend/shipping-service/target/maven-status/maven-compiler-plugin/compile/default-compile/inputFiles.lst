@@ -1,0 +1,16 @@
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentJpaEntity.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentJpaRepository.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\port\ShipmentRepository.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\ShippingServiceApplication.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\port\EventPublisher.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\presentation\controller\ShippingController.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\PaymentCompletedEventDto.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\config\RabbitMQConfig.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentRepositoryImpl.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\service\ShippingService.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\StockReservedEventDto.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\domain\event\ShipmentCreatedEvent.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\domain\entity\Shipment.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\config\SwaggerConfig.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\RabbitMQEventPublisher.java
+D:\Projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\ShippingEventListener.java
