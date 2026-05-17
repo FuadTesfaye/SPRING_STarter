@@ -2,24 +2,29 @@ package com.example.shipping.application.service;
 
 import com.example.shipping.domain.model.Shipping;
 import com.example.shipping.domain.port.ShippingRepositoryPort;
+import com.example.shipping.infrastructure.messaging.RabbitMQConfig;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class ShippingService {
 
     private final ShippingRepositoryPort repository;
-    private final RestTemplate restTemplate;
+    private final RabbitTemplate rabbitTemplate;
 
-    public ShippingService(ShippingRepositoryPort repository, RestTemplate restTemplate) {
+    public ShippingService(ShippingRepositoryPort repository, RabbitTemplate rabbitTemplate) {
         this.repository = repository;
-        this.restTemplate = restTemplate;
+        this.rabbitTemplate = rabbitTemplate;
     }
 
     public void createShipping(String username) {
         Shipping shipping = new Shipping(username, "SHIPPED");
         repository.save(shipping);
         System.out.println("Shipping created for: " + username);
-        restTemplate.postForObject("http://localhost:8086/notifications/send?username=" + username, null, String.class);
+        rabbitTemplate.convertAndSend(
+            RabbitMQConfig.SHIPPING_CREATED_EXCHANGE,
+            RabbitMQConfig.SHIPPING_CREATED_ROUTING_KEY,
+            username
+        );
     }
 }

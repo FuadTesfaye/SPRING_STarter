@@ -2,28 +2,29 @@ package com.example.auth.application.service;
 
 import com.example.auth.domain.model.User;
 import com.example.auth.domain.port.UserRepositoryPort;
+import com.example.auth.infrastructure.messaging.RabbitMQConfig;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class AuthService {
 
     private final UserRepositoryPort repository;
-    private final RestTemplate restTemplate;
+    private final RabbitTemplate rabbitTemplate;
 
-    public AuthService(UserRepositoryPort repository, RestTemplate restTemplate) {
+    public AuthService(UserRepositoryPort repository, RabbitTemplate rabbitTemplate) {
         this.repository = repository;
-        this.restTemplate = restTemplate;
+        this.rabbitTemplate = rabbitTemplate;
     }
 
     public User register(User user) {
         repository.save(user);
         System.out.println("USER REGISTERED: " + user.getUsername());
-        try {
-            restTemplate.postForObject("http://localhost:8082/orders/create?username=" + user.getUsername(), null, String.class);
-        } catch (Exception e) {
-            System.out.println("Order-service unavailable, skipping order creation: " + e.getMessage());
-        }
+        rabbitTemplate.convertAndSend(
+            RabbitMQConfig.USER_REGISTERED_EXCHANGE,
+            RabbitMQConfig.USER_REGISTERED_ROUTING_KEY,
+            user.getUsername()
+        );
         return user;
     }
 }

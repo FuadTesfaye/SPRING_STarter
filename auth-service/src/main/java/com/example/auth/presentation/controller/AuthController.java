@@ -33,4 +33,9 @@ public class AuthController {
         System.out.println("REGISTER ENDPOINT HIT");
         return authService.register(user);
     }
+
+    @GetMapping("/status")
+    public String status() {
+        return "Auth Service Running";
+    }
 }

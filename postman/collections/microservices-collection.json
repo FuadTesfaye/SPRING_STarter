@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Event-Driven Microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth Service",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"secret123\"\n}"
+            },
+            "url": { "raw": "http://localhost:8081/auth/register", "host": ["localhost"], "port": "8081", "path": ["auth", "register"] }
+          }
+        },
+        {
+          "name": "Auth Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8081/auth/status", "host": ["localhost"], "port": "8081", "path": ["auth", "status"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Order Service",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "http://localhost:8082/orders/create?username=testuser", "host": ["localhost"], "port": "8082", "path": ["orders", "create"], "query": [{ "key": "username", "value": "testuser" }] }
+          }
+        },
+        {
+          "name": "Order Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8082/orders", "host": ["localhost"], "port": "8082", "path": ["orders"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Payment Service",
+      "item": [
+        {
+          "name": "Process Payment",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "http://localhost:8083/payments/process?username=testuser", "host": ["localhost"], "port": "8083", "path": ["payments", "process"], "query": [{ "key": "username", "value": "testuser" }] }
+          }
+        },
+        {
+          "name": "Payment Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8083/payments", "host": ["localhost"], "port": "8083", "path": ["payments"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inventory Service",
+      "item": [
+        {
+          "name": "Update Inventory",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "http://localhost:8084/inventory/update?username=testuser", "host": ["localhost"], "port": "8084", "path": ["inventory", "update"], "query": [{ "key": "username", "value": "testuser" }] }
+          }
+        },
+        {
+          "name": "Inventory Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8084/inventory", "host": ["localhost"], "port": "8084", "path": ["inventory"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Shipping Service",
+      "item": [
+        {
+          "name": "Create Shipping",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "http://localhost:8085/shipping/create?username=testuser", "host": ["localhost"], "port": "8085", "path": ["shipping", "create"], "query": [{ "key": "username", "value": "testuser" }] }
+          }
+        },
+        {
+          "name": "Shipping Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8085/shipping", "host": ["localhost"], "port": "8085", "path": ["shipping"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notification Service",
+      "item": [
+        {
+          "name": "Send Notification",
+          "request": {
+            "method": "POST",
+            "url": { "raw": "http://localhost:8086/notifications/send?username=testuser", "host": ["localhost"], "port": "8086", "path": ["notifications", "send"], "query": [{ "key": "username", "value": "testuser" }] }
+          }
+        },
+        {
+          "name": "Notification Service Status",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "http://localhost:8086/notifications", "host": ["localhost"], "port": "8086", "path": ["notifications"] }
+          }
+        }
+      ]
+    }
+  ]
+}
