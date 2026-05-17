@@ -1,28 +1,24 @@
 package com.ecommerce.auth.application.service;
 
+import com.ecommerce.auth.application.ports.EventPublisher;
 import org.springframework.stereotype.Service;
-import java.util.UUID;
 
 @Service
 public class AuthApplicationService {
 
-    public boolean existsByEmail(String email) {
-        return false;
+    private final EventPublisher eventPublisher;
+
+    public AuthApplicationService(EventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
     }
 
     public String register(String email, String password, String fullName) {
-        if (existsByEmail(email)) {
-            return "User already exists";
-        }
-        String userId = UUID.randomUUID().toString();
-        System.out.println("[AUTH SYSTEM] Registered user: " + fullName + " with ID: " + userId);
-        return "User registered successfully! ID: " + userId;
+        System.out.println("[AUTH SERVICE] Registering user: " + fullName);
+        eventPublisher.publish("USER_REGISTERED:" + email);
+        return "User registered successfully";
     }
 
     public String login(String email, String password) {
-        if ("admin@test.com".equals(email) && "password".equals(password)) {
-            return "Login successful! Token: mock-jwt-token-for-" + email;
-        }
-        return "Invalid credentials";
+        return "Login token generated";
     }
 }
