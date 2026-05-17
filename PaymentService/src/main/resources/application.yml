@@ -2,13 +2,12 @@ server:
   port: 8082
 
 spring:
-  application:
-    name: payment-service
   datasource:
     url: jdbc:h2:mem:paymentdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    jdbc-url: jdbc:h2:mem:paymentdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
-    password:
+    password: 
   h2:
     console:
       enabled: true
@@ -18,6 +17,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
 
 management:

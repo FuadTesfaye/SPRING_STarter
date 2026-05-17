@@ -1,5 +1,16 @@
-target/
+# H2 databases
+*.mv.db
+*.trace.db
+
+# Service runtime data
+*/data/
+
+# IntelliJ
 .idea/
-.vscode/
 *.iml
 
+# VS Code
+.vscode/
+
+# Maven
+target/
