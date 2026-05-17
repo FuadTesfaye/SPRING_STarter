@@ -1,0 +1,41 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: shipping-service
+  
+  datasource:
+    url: jdbc:h2:mem:shippingdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin123
+
+app:
+  rabbitmq:
+    exchange: app.exchange
+    queue:
+      payment-completed: payment.completed.queue
+      stock-reserved: stock.reserved.queue
+      shipment-created: shipment.created.queue
+    routing-key:
+      payment-completed: payment.completed
+      stock-reserved: stock.reserved
+      shipment-created: shipment.created
+
+logging:
+  level:
+    com.microservices.shipping: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
