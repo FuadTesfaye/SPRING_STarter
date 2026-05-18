@@ -1,0 +1,198 @@
+= E-Commerce Microservices Platform Documentation
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectlinks:
+
+This document provides a comprehensive overview of the E-Commerce Microservices project, detailing its architecture, components, technologies, and operational workflows from various perspectives.
+
+== 1. System Overview
+
+The project is a distributed, event-driven e-commerce platform built using Spring Boot microservices for the backend and a Next.js application for the storefront. The system is designed to be highly scalable, maintainable, and resilient, leveraging modern architectural patterns.
+
+=== Core Objectives
+*   **Decoupling**: Services are autonomous and communicate asynchronously where possible.
+*   **Scalability**: Individual services can be scaled independently based on load.
+*   **Maintainability**: Each service follows a strict Onion Architecture, isolating domain logic from infrastructure concerns.
+
+---
+
+== 2. Architectural Perspectives
+
+=== 2.1. System Architecture (Microservices)
+
+The application is divided into specialized services, each responsible for a specific business capability. This avoids the pitfalls of a monolith and allows teams to work independently on different domain areas.
+
+*   **API Gateway**: The single entry point for all client requests (Storefront). It handles routing to appropriate microservices.
+*   **Business Services**: Core services like Order, Product, Inventory, etc., that handle specific business logic.
+*   **Event Bus (RabbitMQ)**: Facilitates asynchronous, event-driven communication between services.
+
+=== 2.2. Internal Service Architecture (Onion Architecture)
+
+Each Spring Boot microservice is structured following the **Onion Architecture** (or Clean Architecture) principles. This ensures that the core business logic is independent of external frameworks, databases, and communication protocols.
+
+Typical folder structure within a service:
+[source]
+----
+com.company.service
+├── domain
+│   ├── event
+│   ├── model
+│   └── repository (interfaces)
+├── application
+│   └── dto
+├── infrastructure
+│   ├── messaging (RabbitMQ)
+│   └── persistence (JPA entities and implementations)
+└── presentation
+    └── rest (Controllers)
+----
+
+*   **Domain Layer**: The core of the application. Contains business entities, value objects, and domain events. It has no dependencies on any other layer.
+*   **Application Layer**: Contains use cases and application services. It orchestrates the flow of data to and from the domain entities.
+*   **Infrastructure Layer**: Implements details like database persistence (JPA/Hibernate), messaging (RabbitMQ), and external API clients.
+*   **Presentation Layer**: Handles HTTP requests (REST Controllers) and exposes the service to the outside world (or the Gateway).
+
+=== 2.3. Communication Architecture (Event-Driven)
+
+The system heavily relies on **Asynchronous Event-Driven Communication** to ensure high availability and decoupling.
+
+*   When a significant state change occurs (e.g., an order is created), the responsible service publishes an event to RabbitMQ.
+*   Other services subscribe to these events and react accordingly (e.g., Inventory service reduces stock, Notification service sends an email).
+*   This prevents a failure in one service (like Notification) from blocking the main workflow (like placing an order).
+
+---
+
+== 3. Services Breakdown
+
+Here is a detailed look at each component in the ecosystem.
+
+=== 3.1. Gateway Service (`gateway-service`)
+*   **Role**: Edge server and API Gateway.
+*   **Technology**: Spring Cloud Gateway.
+*   **Responsibilities**:
+    *   Routes requests from the Storefront to the appropriate backend service.
+    *   Acts as a central point for cross-cutting concerns (could be extended for rate limiting, security, etc.).
+
+=== 3.2. Auth Service (`auth-service`)
+*   **Role**: Identity and Access Management.
+*   **Responsibilities**:
+    *   User registration and authentication.
+    *   Token generation and validation.
+    *   Manages user roles and permissions.
+
+=== 3.3. Product Service (`product-service`)
+*   **Role**: Product Catalog Management.
+*   **Responsibilities**:
+    *   Manages product details, categories, and pricing.
+    *   Serves product catalog data to the storefront.
+
+=== 3.4. Order Service (`order-service`)
+*   **Role**: Order Orchestration.
+*   **Responsibilities**:
+    *   Handles the creation and management of customer orders.
+    *   Triggers the order fulfillment workflow by publishing `OrderCreatedEvent`.
+
+=== 3.5. Inventory Service (`inventory-service`)
+*   **Role**: Stock Management.
+*   **Responsibilities**:
+    *   Tracks stock levels for products.
+    *   Listens for `OrderCreatedEvent` to reserve or deduct stock.
+    *   Ensures products are not oversold.
+
+=== 3.6. Payment Service (`payment-service`)
+*   **Role**: Transaction Processing.
+*   **Responsibilities**:
+    *   Handles payment processing (mocked or integrated with a provider).
+    *   Processes payments triggered by order events.
+
+=== 3.7. Shipping Service (`shipping-service`)
+*   **Role**: Logistics and Delivery.
+*   **Responsibilities**:
+    *   Manages shipping information and delivery status.
+    *   Initiates shipping processes once payment and inventory are confirmed.
+
+=== 3.8. Notification Service (`notification-service`)
+*   **Role**: Communication.
+*   **Responsibilities**:
+    *   Sends emails, SMS, or push notifications to users.
+    *   Listens to various events across the system to trigger notifications (e.g., "Order Confirmed", "Item Shipped").
+
+=== 3.9. Storefront (`storefront`)
+*   **Role**: User Interface.
+*   **Technology**: Next.js (React).
+*   **Responsibilities**:
+    *   Provides a modern, responsive web interface for customers.
+    *   Communicates exclusively with the Gateway Service.
+
+---
+
+== 4. Technology Stack
+
+The project utilizes a robust stack of modern technologies:
+
+|===
+| Component | Technology
+
+| **Backend Framework** | Spring Boot 3.2.5
+| **API Gateway** | Spring Cloud Gateway
+| **Language** | Java 17
+| **Database** | H2 (In-Memory for development/testing)
+| **ORM** | Spring Data JPA / Hibernate
+| **Messaging Broker** | RabbitMQ
+| **Frontend Framework** | Next.js (React)
+| **Build Tool** | Maven (Backend), npm (Frontend)
+| **Containerization** | Docker & Docker Compose
+|===
+
+---
+
+== 5. Key Workflows
+
+=== 5.1. Order Placement Workflow (Event-Driven)
+
+This workflow illustrates how services interact asynchronously when a user places an order.
+
+1.  **User** interacts with the **Storefront** and submits an order.
+2.  **Storefront** sends a request to the **Gateway**.
+3.  **Gateway** routes the request to the **Order Service**.
+4.  **Order Service** persists the order with a `PENDING` status.
+5.  **Order Service** publishes an `OrderCreatedEvent` to **RabbitMQ**.
+6.  **Inventory Service** receives the event and checks/reserves stock.
+7.  **Payment Service** receives the event and initiates payment processing.
+8.  **Notification Service** receives the event and sends an "Order Received" email to the customer.
+
+This choreography ensures that the Order Service doesn't have to wait for Inventory or Payment to complete before responding to the user, providing a fast user experience.
+
+---
+
+== 6. Development and Deployment
+
+=== 6.1. Running with Docker Compose
+The easiest way to run the entire ecosystem is using Docker Compose. This ensures all services and the messaging broker are started with correct configurations.
+
+[source,bash]
+----
+docker-compose up --build
+----
+
+This command will:
+1.  Start a RabbitMQ instance with management console.
+2.  Build and start all 7 Spring Boot services.
+3.  Build and start the Gateway service.
+4.  Build and start the Next.js Storefront.
+
+=== 6.2. Running Locally for Development
+If you prefer to run services individually for debugging, a PowerShell script is provided:
+
+[source,powershell]
+----
+./run_all.ps1
+----
+
+This script opens separate terminal windows for each service, running them via `mvn spring-boot:run` and `npm run dev`.
+
+=== 6.3. Key Endpoints
+*   **Storefront**: `http://localhost:3000`
+*   **API Gateway**: `http://localhost:8080`
+*   **RabbitMQ Management**: `http://localhost:15672` (Default login: `guest`/`guest`)
