@@ -1,7 +1,9 @@
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\usecase\LoginUseCase.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\dto\RegisterUserRequest.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\domain\entity\User.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\dto\AuthResponse.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\dto\LoginRequest.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\usecase\RegisterUserUseCase.java
+C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\domain\repository\UserRepository.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\service\AuthApplicationService.java
 C:\Users\Uzumaki\IdeaProjects\SPRING_STarter\src\EcommerceSystem\AuthService\AuthService.Application\src\main\java\com\ecommerce\auth\application\ports\EventPublisher.java

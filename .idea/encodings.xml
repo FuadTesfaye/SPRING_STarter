@@ -15,8 +15,16 @@
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/InventoryService.Infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/InventoryService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/NotificationService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/NotificationService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/NotificationService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/NotificationService.Infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/NotificationService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/OrderService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/OrderService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/OrderService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/OrderService.Infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/OrderService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/PaymentService/PaymentService.Api/src/main/java" charset="UTF-8" />
@@ -29,6 +37,10 @@
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/Shared.Messaging/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/Shared/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/ShippingService.Api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/ShippingService.Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/ShippingService.Domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/ShippingService.Infrastructure/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/ShippingService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/EcommerceSystem/src/main/java" charset="UTF-8" />

@@ -7,18 +7,30 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="payment-infrastructure" />
-        <module name="auth-domain" />
-        <module name="shared-domain" />
-        <module name="inventory-api" />
+        <module name="notification-api" />
+        <module name="order-api" />
         <module name="payment-api" />
         <module name="auth-application" />
         <module name="shared-messaging" />
-        <module name="payment-domain" />
-        <module name="auth-infrastructure" />
+        <module name="shipping-api" />
         <module name="payment-application" />
-        <module name="inventory-application" />
-        <module name="auth-api" />
+        <module name="order-application" />
         <module name="inventory-infrastructure" />
+        <module name="notification-domain" />
+        <module name="order-domain" />
+        <module name="order-infrastructure" />
+        <module name="auth-domain" />
+        <module name="shared-domain" />
+        <module name="inventory-api" />
+        <module name="payment-domain" />
+        <module name="shipping-application" />
+        <module name="auth-infrastructure" />
+        <module name="notification-infrastructure" />
+        <module name="inventory-application" />
+        <module name="shipping-domain" />
+        <module name="auth-api" />
+        <module name="shipping-infrastructure" />
+        <module name="notification-application" />
         <module name="inventory-domain" />
       </profile>
     </annotationProcessing>
@@ -37,12 +49,24 @@
       <module name="inventory-application" options="-parameters" />
       <module name="inventory-domain" options="-parameters" />
       <module name="inventory-infrastructure" options="-parameters" />
+      <module name="notification-api" options="-parameters" />
+      <module name="notification-application" options="-parameters" />
+      <module name="notification-domain" options="-parameters" />
+      <module name="notification-infrastructure" options="-parameters" />
+      <module name="order-api" options="-parameters" />
+      <module name="order-application" options="-parameters" />
+      <module name="order-domain" options="-parameters" />
+      <module name="order-infrastructure" options="-parameters" />
       <module name="payment-api" options="-parameters" />
       <module name="payment-application" options="-parameters" />
       <module name="payment-domain" options="-parameters" />
       <module name="payment-infrastructure" options="-parameters" />
       <module name="shared-domain" options="-parameters" />
       <module name="shared-messaging" options="-parameters" />
+      <module name="shipping-api" options="-parameters" />
+      <module name="shipping-application" options="-parameters" />
+      <module name="shipping-domain" options="-parameters" />
+      <module name="shipping-infrastructure" options="-parameters" />
       <module name="task-app" options="" />
     </option>
   </component>
