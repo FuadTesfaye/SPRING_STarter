@@ -1,0 +1,23 @@
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "1234"
+}
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "1234"
+}
+
+###
+
+
+GET http://localhost:8081/hello
+Authorization:07a3d1da-655b-4909-bd19-8199b35c1be5

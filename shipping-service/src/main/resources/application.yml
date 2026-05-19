@@ -1,0 +1,6 @@
+server:
+  port: 8084
+
+spring:
+  rabbitmq:
+    uri: amqps://cpjpnzkp:HEFeBUUcx9JL-Ybe05Ef19epzsjFEhAN@kingfisher.lmq.cloudamqp.com/cpjpnzkp
