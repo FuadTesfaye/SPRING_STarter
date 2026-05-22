@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE = "app.exchange";
-    public static final String PAYMENT_QUEUE = "payment.queue";
+    public static final String ORDER_CREATED_QUEUE = "payment.order_created.queue";
+    public static final String ROUTING_KEY_ORDER_CREATED = "order.created";
 
     @Bean
     public TopicExchange appExchange() {
@@ -18,13 +19,13 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Queue paymentQueue() {
-        return new Queue(PAYMENT_QUEUE, true);
+    public Queue orderCreatedQueue() {
+        return new Queue(ORDER_CREATED_QUEUE);
     }
 
     @Bean
-    public Binding paymentBinding(Queue paymentQueue, TopicExchange appExchange) {
-        return BindingBuilder.bind(paymentQueue).to(appExchange).with("order.created");
+    public Binding orderCreatedBinding(Queue orderCreatedQueue, TopicExchange appExchange) {
+        return BindingBuilder.bind(orderCreatedQueue).to(appExchange).with(ROUTING_KEY_ORDER_CREATED);
     }
 
     @Bean

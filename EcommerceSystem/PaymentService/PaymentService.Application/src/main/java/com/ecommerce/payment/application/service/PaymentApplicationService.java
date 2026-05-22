@@ -1,48 +1,28 @@
 package com.ecommerce.payment.application.service;
 
-import com.ecommerce.payment.application.ports.PaymentEventPublisher;
-import com.ecommerce.payment.application.usecase.ProcessPaymentUseCase;
-import com.ecommerce.payment.domain.entity.Payment;
-import com.ecommerce.payment.domain.repository.PaymentRepository;
+import com.ecommerce.payment.application.ports.EventPublisher;
 import com.ecommerce.shared.messaging.event.PaymentCompletedEvent;
 import com.ecommerce.shared.messaging.event.PaymentFailedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class PaymentApplicationService implements ProcessPaymentUseCase {
+public class PaymentApplicationService {
 
-    private final PaymentEventPublisher eventPublisher;
-    private final PaymentRepository paymentRepository;
+    private final EventPublisher eventPublisher;
 
-    @Override
-    public Payment process(String orderId, BigDecimal amount) {
-        // Mock payment logic
-        boolean success = amount.compareTo(BigDecimal.valueOf(1000.0)) < 0;
+    public void processPayment(String orderId, String userId, java.math.BigDecimal amount) {
+        // Mock payment logic: succeed 90% of the time
+        boolean success = Math.random() < 0.9;
 
-        Payment payment = Payment.builder()
-                .id(UUID.randomUUID().toString())
-                .orderId(orderId)
-                .amount(amount)
-                .status(success ? Payment.PaymentStatus.COMPLETED : Payment.PaymentStatus.FAILED)
-                .timestamp(LocalDateTime.now())
-                .build();
-
-        // Save to DB
-        paymentRepository.save(payment);
-
-        // Publish event
         if (success) {
-            eventPublisher.publish(new PaymentCompletedEvent(payment.getId(), orderId));
+            String paymentId = UUID.randomUUID().toString();
+            eventPublisher.publish(new PaymentCompletedEvent(paymentId, orderId));
         } else {
-            eventPublisher.publish(new PaymentFailedEvent(orderId, "Amount exceeds limit"));
+            eventPublisher.publish(new PaymentFailedEvent(orderId, "Insufficient funds"));
         }
-
-        return payment;
     }
 }

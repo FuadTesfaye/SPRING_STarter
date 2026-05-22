@@ -15,7 +15,9 @@ services:
     image: postgres:latest
     container_name: ecommerce-postgres
     environment:
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: 1q2w3e4r5t
+    volumes:
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
     ports:
       - "5432:5432"
     # Note: Multiple databases (auth_db, order_db, etc.) should be initialized here or managed per service.

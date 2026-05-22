@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Table(name = "shipments")
 @Data
@@ -18,7 +16,7 @@ public class ShipmentEntity {
     @Id
     private String id;
     private String orderId;
-    private String trackingNumber;
-    private String status;
-    private LocalDateTime estimatedDelivery;
+    private boolean paymentCompleted;
+    private boolean stockReserved;
+    private boolean shipped;
 }

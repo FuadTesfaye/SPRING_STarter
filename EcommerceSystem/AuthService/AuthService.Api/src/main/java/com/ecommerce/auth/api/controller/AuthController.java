@@ -32,4 +32,17 @@ public class AuthController {
         }
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponse> refresh(@RequestHeader("Authorization") String authHeader) {
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            return ResponseEntity.badRequest().body(AuthResponse.builder().message("Missing Bearer token").build());
+        }
+        String token = authHeader.substring(7);
+        AuthResponse response = authService.refresh(token);
+        if (response.getToken() == null) {
+            return ResponseEntity.status(401).body(response);
+        }
+        return ResponseEntity.ok(response);
+    }
 }

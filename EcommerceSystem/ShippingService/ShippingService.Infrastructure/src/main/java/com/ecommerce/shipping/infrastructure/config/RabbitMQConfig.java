@@ -10,7 +10,11 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE = "app.exchange";
-    public static final String SHIPPING_QUEUE = "shipping.queue";
+    public static final String PAYMENT_COMPLETED_QUEUE = "shipping.payment_completed.queue";
+    public static final String STOCK_RESERVED_QUEUE = "shipping.stock_reserved.queue";
+    
+    public static final String ROUTING_KEY_PAYMENT_COMPLETED = "payment.completed";
+    public static final String ROUTING_KEY_STOCK_RESERVED = "stock.reserved";
 
     @Bean
     public TopicExchange appExchange() {
@@ -18,18 +22,23 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Queue shippingQueue() {
-        return new Queue(SHIPPING_QUEUE, true);
+    public Queue paymentCompletedQueue() {
+        return new Queue(PAYMENT_COMPLETED_QUEUE);
     }
 
     @Bean
-    public Binding paymentCompletedBinding(Queue shippingQueue, TopicExchange appExchange) {
-        return BindingBuilder.bind(shippingQueue).to(appExchange).with("payment.completed");
+    public Queue stockReservedQueue() {
+        return new Queue(STOCK_RESERVED_QUEUE);
     }
 
     @Bean
-    public Binding stockReservedBinding(Queue shippingQueue, TopicExchange appExchange) {
-        return BindingBuilder.bind(shippingQueue).to(appExchange).with("stock.reserved");
+    public Binding paymentCompletedBinding(Queue paymentCompletedQueue, TopicExchange appExchange) {
+        return BindingBuilder.bind(paymentCompletedQueue).to(appExchange).with(ROUTING_KEY_PAYMENT_COMPLETED);
+    }
+
+    @Bean
+    public Binding stockReservedBinding(Queue stockReservedQueue, TopicExchange appExchange) {
+        return BindingBuilder.bind(stockReservedQueue).to(appExchange).with(ROUTING_KEY_STOCK_RESERVED);
     }
 
     @Bean

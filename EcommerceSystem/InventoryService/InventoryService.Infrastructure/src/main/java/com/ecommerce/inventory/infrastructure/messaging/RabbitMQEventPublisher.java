@@ -1,7 +1,9 @@
-package com.ecommerce.auth.infrastructure.messaging;
+package com.ecommerce.inventory.infrastructure.messaging;
 
-import com.ecommerce.auth.application.ports.EventPublisher;
+import com.ecommerce.inventory.application.ports.EventPublisher;
 import com.ecommerce.shared.messaging.event.BaseEvent;
+import com.ecommerce.shared.messaging.event.StockReservedEvent;
+import com.ecommerce.shared.messaging.event.StockFailedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class RabbitMQEventPublisher implements EventPublisher {
 
     private final RabbitTemplate rabbitTemplate;
-    private static final String EXCHANGE = "app.exchange";
+    public static final String EXCHANGE = "app.exchange";
 
     @Override
     public void publish(BaseEvent event) {
@@ -20,10 +22,8 @@ public class RabbitMQEventPublisher implements EventPublisher {
     }
 
     private String getRoutingKey(BaseEvent event) {
-        // Simple mapping logic based on class name or property
-        if (event instanceof com.ecommerce.shared.messaging.event.UserRegisteredEvent) return "user.registered";
-        if (event instanceof com.ecommerce.shared.messaging.event.UserLoggedInEvent) return "user.logged_in";
-        // Add other mappings as needed
+        if (event instanceof StockReservedEvent) return "stock.reserved";
+        if (event instanceof StockFailedEvent) return "stock.failed";
         return "default.key";
     }
 }

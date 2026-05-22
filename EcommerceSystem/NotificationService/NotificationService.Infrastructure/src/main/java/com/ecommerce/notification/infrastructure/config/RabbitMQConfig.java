@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     public static final String EXCHANGE = "app.exchange";
-    public static final String NOTIFICATION_QUEUE = "notification.queue";
+    public static final String ALL_EVENTS_QUEUE = "notification.all.queue";
+    public static final String ROUTING_KEY_PATTERN = "#"; // Listen to all topics
 
     @Bean
     public TopicExchange appExchange() {
@@ -18,14 +19,13 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public Queue notificationQueue() {
-        return new Queue(NOTIFICATION_QUEUE, true);
+    public Queue allEventsQueue() {
+        return new Queue(ALL_EVENTS_QUEUE);
     }
 
-    // Bind to ALL events using wildcard '#'
     @Bean
-    public Binding notificationBinding(Queue notificationQueue, TopicExchange appExchange) {
-        return BindingBuilder.bind(notificationQueue).to(appExchange).with("#");
+    public Binding allEventsBinding(Queue allEventsQueue, TopicExchange appExchange) {
+        return BindingBuilder.bind(allEventsQueue).to(appExchange).with(ROUTING_KEY_PATTERN);
     }
 
     @Bean

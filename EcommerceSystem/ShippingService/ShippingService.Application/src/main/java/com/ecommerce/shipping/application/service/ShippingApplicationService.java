@@ -1,46 +1,54 @@
 package com.ecommerce.shipping.application.service;
 
-import com.ecommerce.shipping.application.usecase.ProcessShipmentUseCase;
+import com.ecommerce.shipping.application.ports.EventPublisher;
 import com.ecommerce.shipping.domain.entity.Shipment;
 import com.ecommerce.shipping.domain.repository.ShipmentRepository;
 import com.ecommerce.shared.messaging.event.ShipmentCreatedEvent;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
-public class ShippingApplicationService implements ProcessShipmentUseCase {
+@RequiredArgsConstructor
+public class ShippingApplicationService {
 
-    private final RabbitTemplate rabbitTemplate;
     private final ShipmentRepository shipmentRepository;
+    private final EventPublisher eventPublisher;
 
-    public ShippingApplicationService(RabbitTemplate rabbitTemplate, ShipmentRepository shipmentRepository) {
-        this.rabbitTemplate = rabbitTemplate;
-        this.shipmentRepository = shipmentRepository;
+    @Transactional
+    public void handlePaymentCompleted(String orderId) {
+        Shipment shipment = getOrCreateShipment(orderId);
+        shipment.setPaymentCompleted(true);
+        checkAndCreateShipment(shipment);
     }
 
-    @Override
-    public Shipment initiate(String orderId) {
-        String shipmentId = UUID.randomUUID().toString();
-        String trackingNumber = "TRK-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+    @Transactional
+    public void handleStockReserved(String orderId) {
+        Shipment shipment = getOrCreateShipment(orderId);
+        shipment.setStockReserved(true);
+        checkAndCreateShipment(shipment);
+    }
 
-        Shipment shipment = Shipment.builder()
-                .id(shipmentId)
-                .orderId(orderId)
-                .trackingNumber(trackingNumber)
-                .status(Shipment.ShipmentStatus.SHIPPED)
-                .estimatedDelivery(LocalDateTime.now().plusDays(3))
-                .build();
+    private Shipment getOrCreateShipment(String orderId) {
+        return shipmentRepository.findByOrderId(orderId)
+                .orElseGet(() -> Shipment.builder()
+                        .id(UUID.randomUUID().toString())
+                        .orderId(orderId)
+                        .paymentCompleted(false)
+                        .stockReserved(false)
+                        .shipped(false)
+                        .build());
+    }
 
-        // Save to DB
-        shipmentRepository.save(shipment);
-
-        // Publish event
-        rabbitTemplate.convertAndSend("app.exchange", "shipment.created", 
-                new ShipmentCreatedEvent(shipmentId, orderId, trackingNumber));
-
-        return shipment;
+    private void checkAndCreateShipment(Shipment shipment) {
+        if (shipment.isPaymentCompleted() && shipment.isStockReserved() && !shipment.isShipped()) {
+            shipment.setShipped(true);
+            shipmentRepository.save(shipment);
+            eventPublisher.publish(new ShipmentCreatedEvent(UUID.randomUUID().toString(), shipment.getOrderId()));
+        } else {
+            shipmentRepository.save(shipment);
+        }
     }
 }

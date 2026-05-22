@@ -14,6 +14,7 @@ public class RabbitMQConfig {
     public static final String EXCHANGE = "app.exchange";
     public static final String AUTH_QUEUE = "auth.queue";
     public static final String ROUTING_KEY_REGISTERED = "user.registered";
+    public static final String ROUTING_KEY_LOGGED_IN = "user.logged_in";
 
     @Bean
     public TopicExchange exchange() {
@@ -28,6 +29,11 @@ public class RabbitMQConfig {
     @Bean
     public Binding authBinding(Queue authQueue, TopicExchange exchange) {
         return BindingBuilder.bind(authQueue).to(exchange).with(ROUTING_KEY_REGISTERED);
+    }
+
+    @Bean
+    public Binding loginBinding(Queue authQueue, TopicExchange exchange) {
+        return BindingBuilder.bind(authQueue).to(exchange).with(ROUTING_KEY_LOGGED_IN);
     }
 
     @Bean

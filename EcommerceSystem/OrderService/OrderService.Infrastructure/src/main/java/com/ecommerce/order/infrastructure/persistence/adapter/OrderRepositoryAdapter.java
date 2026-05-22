@@ -9,7 +9,6 @@ import com.ecommerce.order.infrastructure.persistence.repository.OrderJpaReposit
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -20,47 +19,34 @@ public class OrderRepositoryAdapter implements OrderRepository {
 
     @Override
     public Order save(Order order) {
-        OrderEntity entity = toEntity(order);
-        OrderEntity saved = jpaRepository.save(entity);
-        return toDomain(saved);
-    }
-
-    @Override
-    public Optional<Order> findById(String id) {
-        return jpaRepository.findById(id).map(this::toDomain);
-    }
-
-    private OrderEntity toEntity(Order order) {
-        return OrderEntity.builder()
+        OrderEntity entity = OrderEntity.builder()
                 .id(order.getId())
                 .userId(order.getUserId())
                 .totalAmount(order.getTotalAmount())
-                .status(order.getStatus().name())
-                .items(order.getItems() != null ? order.getItems().stream().map(item ->
-                        OrderItemEntity.builder()
-                                .id(item.getId())
-                                .productId(item.getProductId())
-                                .quantity(item.getQuantity())
-                                .price(item.getPrice())
-                                .build()
-                ).collect(Collectors.toList()) : null)
+                .status(order.getStatus())
+                .items(order.getItems().stream().map(item -> OrderItemEntity.builder()
+                        .productId(item.getProductId())
+                        .quantity(item.getQuantity())
+                        .price(item.getPrice())
+                        .build()).collect(Collectors.toList()))
                 .build();
+        
+        jpaRepository.save(entity);
+        return order;
     }
 
-    private Order toDomain(OrderEntity entity) {
-        return Order.builder()
+    @Override
+    public java.util.Optional<Order> findById(String id) {
+        return jpaRepository.findById(id).map(entity -> Order.builder()
                 .id(entity.getId())
                 .userId(entity.getUserId())
                 .totalAmount(entity.getTotalAmount())
-                .status(Order.OrderStatus.valueOf(entity.getStatus()))
-                .items(entity.getItems() != null ? entity.getItems().stream().map(item ->
-                        OrderItem.builder()
-                                .id(item.getId())
-                                .productId(item.getProductId())
-                                .quantity(item.getQuantity())
-                                .price(item.getPrice())
-                                .build()
-                ).collect(Collectors.toList()) : null)
-                .build();
+                .status(entity.getStatus())
+                .items(entity.getItems().stream().map(item -> OrderItem.builder()
+                        .productId(item.getProductId())
+                        .quantity(item.getQuantity())
+                        .price(item.getPrice())
+                        .build()).collect(Collectors.toList()))
+                .build());
     }
 }

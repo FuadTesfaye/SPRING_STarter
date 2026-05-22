@@ -5,10 +5,13 @@ import com.ecommerce.auth.application.dto.RegisterUserRequest;
 import com.ecommerce.auth.application.dto.LoginRequest;
 import com.ecommerce.auth.application.ports.EventPublisher;
 import com.ecommerce.auth.application.ports.JwtProvider;
+import com.ecommerce.auth.application.ports.PasswordEncoderPort;
 import com.ecommerce.auth.application.usecase.LoginUseCase;
 import com.ecommerce.auth.application.usecase.RegisterUserUseCase;
+import com.ecommerce.auth.application.usecase.RefreshTokenUseCase;
 import com.ecommerce.auth.domain.entity.User;
 import com.ecommerce.auth.domain.repository.UserRepository;
+import com.ecommerce.shared.messaging.event.UserLoggedInEvent;
 import com.ecommerce.shared.messaging.event.UserRegisteredEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,11 +20,12 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase {
+public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase, RefreshTokenUseCase {
 
     private final UserRepository userRepository;
     private final EventPublisher eventPublisher;
     private final JwtProvider jwtProvider;
+    private final PasswordEncoderPort passwordEncoder;
 
     @Override
     public AuthResponse register(RegisterUserRequest request) {
@@ -34,7 +38,7 @@ public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase
         User user = User.builder()
                 .id(UUID.randomUUID().toString())
                 .email(request.getEmail())
-                .password(request.getPassword()) // In a real app, encode with BCrypt
+                .password(passwordEncoder.encode(request.getPassword()))
                 .fullName(request.getFullName())
                 .build();
 
@@ -55,14 +59,40 @@ public class AuthApplicationService implements RegisterUserUseCase, LoginUseCase
     @Override
     public AuthResponse login(LoginRequest request) {
         return userRepository.findByEmail(request.getEmail())
-                .filter(user -> user.getPassword().equals(request.getPassword()))
-                .map(user -> AuthResponse.builder()
-                        .userId(user.getId())
-                        .token(jwtProvider.generateToken(user.getId(), user.getEmail()))
-                        .message("Login successful")
-                        .build())
+                .filter(user -> passwordEncoder.matches(request.getPassword(), user.getPassword()))
+                .map(user -> {
+                    String token = jwtProvider.generateToken(user.getId(), user.getEmail());
+                    
+                    // Publish Event to RabbitMQ
+                    eventPublisher.publish(new UserLoggedInEvent(user.getId(), user.getEmail()));
+
+                    return AuthResponse.builder()
+                            .userId(user.getId())
+                            .token(token)
+                            .message("Login successful")
+                            .build();
+                })
                 .orElse(AuthResponse.builder()
                         .message("Invalid credentials")
                         .build());
+    }
+
+    @Override
+    public AuthResponse refresh(String token) {
+        if (jwtProvider.isTokenValid(token)) {
+            String email = jwtProvider.extractEmail(token);
+            return userRepository.findByEmail(email)
+                    .map(user -> AuthResponse.builder()
+                            .userId(user.getId())
+                            .token(jwtProvider.generateToken(user.getId(), user.getEmail()))
+                            .message("Token refreshed")
+                            .build())
+                    .orElse(AuthResponse.builder()
+                            .message("User not found")
+                            .build());
+        }
+        return AuthResponse.builder()
+                .message("Invalid token")
+                .build();
     }
 }

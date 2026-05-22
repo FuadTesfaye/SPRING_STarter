@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class PaymentCompletedEvent extends BaseEvent {
-    private String paymentId;
-    private String orderId;
+public class UserLoggedInEvent extends BaseEvent {
+    private String userId;
+    private String email;
 }

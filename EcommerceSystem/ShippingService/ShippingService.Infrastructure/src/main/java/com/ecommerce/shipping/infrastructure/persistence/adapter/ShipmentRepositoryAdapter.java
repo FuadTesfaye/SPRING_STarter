@@ -6,7 +6,6 @@ import com.ecommerce.shipping.infrastructure.persistence.entity.ShipmentEntity;
 import com.ecommerce.shipping.infrastructure.persistence.repository.ShipmentJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.Optional;
 
 @Component
@@ -17,33 +16,25 @@ public class ShipmentRepositoryAdapter implements ShipmentRepository {
 
     @Override
     public Shipment save(Shipment shipment) {
-        ShipmentEntity entity = toEntity(shipment);
-        ShipmentEntity saved = jpaRepository.save(entity);
-        return toDomain(saved);
+        ShipmentEntity entity = ShipmentEntity.builder()
+                .id(shipment.getId())
+                .orderId(shipment.getOrderId())
+                .paymentCompleted(shipment.isPaymentCompleted())
+                .stockReserved(shipment.isStockReserved())
+                .shipped(shipment.isShipped())
+                .build();
+        jpaRepository.save(entity);
+        return shipment;
     }
 
     @Override
     public Optional<Shipment> findByOrderId(String orderId) {
-        return jpaRepository.findByOrderId(orderId).map(this::toDomain);
-    }
-
-    private ShipmentEntity toEntity(Shipment shipment) {
-        return ShipmentEntity.builder()
-                .id(shipment.getId())
-                .orderId(shipment.getOrderId())
-                .trackingNumber(shipment.getTrackingNumber())
-                .status(shipment.getStatus() != null ? shipment.getStatus().name() : null)
-                .estimatedDelivery(shipment.getEstimatedDelivery())
-                .build();
-    }
-
-    private Shipment toDomain(ShipmentEntity entity) {
-        return Shipment.builder()
+        return jpaRepository.findByOrderId(orderId).map(entity -> Shipment.builder()
                 .id(entity.getId())
                 .orderId(entity.getOrderId())
-                .trackingNumber(entity.getTrackingNumber())
-                .status(entity.getStatus() != null ? Shipment.ShipmentStatus.valueOf(entity.getStatus()) : null)
-                .estimatedDelivery(entity.getEstimatedDelivery())
-                .build();
+                .paymentCompleted(entity.isPaymentCompleted())
+                .stockReserved(entity.isStockReserved())
+                .shipped(entity.isShipped())
+                .build());
     }
 }

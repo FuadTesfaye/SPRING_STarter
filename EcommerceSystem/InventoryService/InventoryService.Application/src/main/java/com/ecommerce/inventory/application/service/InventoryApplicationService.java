@@ -1,41 +1,25 @@
 package com.ecommerce.inventory.application.service;
 
-import com.ecommerce.inventory.application.dto.AddProductRequest;
-import com.ecommerce.inventory.application.ports.InventoryEventPublisher;
-import com.ecommerce.inventory.application.usecase.ReserveStockUseCase;
-import com.ecommerce.inventory.domain.entity.Product;
-import com.ecommerce.inventory.domain.repository.ProductRepository;
-import com.ecommerce.shared.messaging.event.StockFailedEvent;
+import com.ecommerce.inventory.application.ports.EventPublisher;
 import com.ecommerce.shared.messaging.event.StockReservedEvent;
+import com.ecommerce.shared.messaging.event.StockFailedEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.UUID;
-
 @Service
 @RequiredArgsConstructor
-public class InventoryApplicationService implements ReserveStockUseCase {
+public class InventoryApplicationService {
 
-    private final InventoryEventPublisher eventPublisher;
-    private final ProductRepository productRepository;
+    private final EventPublisher eventPublisher;
 
-    @Override
-    public void reserve(String orderId) {
-        // In a real app, you'd iterate items and reserve stock
-        eventPublisher.publish(new StockReservedEvent(orderId));
-    }
+    public void reserveStock(String orderId) {
+        // Mock inventory logic: succeed 90% of the time
+        boolean success = Math.random() < 0.9;
 
-    public Product addProduct(AddProductRequest request) {
-        Product product = Product.builder()
-                .id(UUID.randomUUID().toString())
-                .name(request.getName())
-                .stockQuantity(request.getInitialStock())
-                .build();
-        return productRepository.save(product);
-    }
-
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        if (success) {
+            eventPublisher.publish(new StockReservedEvent(orderId));
+        } else {
+            eventPublisher.publish(new StockFailedEvent(orderId, "Product out of stock"));
+        }
     }
 }

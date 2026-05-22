@@ -5,20 +5,23 @@ spring:
   application:
     name: auth-service
   datasource:
-    url: jdbc:postgresql://34.241.16.247:5432/postgres?currentSchema=auth_service&sslmode=disable
-    username: postgres.ixxknffjvcfnkkrhwezt
-    password: 8GAgdcQSuWto8w4Y
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: postgres
+    password: 1q2w3e4r5t
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        default_schema: auth_service
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+  sql:
+    init:
+      mode: always
     show-sql: true
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000

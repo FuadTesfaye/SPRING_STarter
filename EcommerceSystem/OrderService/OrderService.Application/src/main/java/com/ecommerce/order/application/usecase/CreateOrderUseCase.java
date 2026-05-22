@@ -1,8 +1,8 @@
 package com.ecommerce.order.application.usecase;
 
-import com.ecommerce.order.application.dto.CreateOrderRequest;
-import com.ecommerce.order.domain.entity.Order;
+import com.ecommerce.order.application.dto.OrderRequest;
+import com.ecommerce.order.application.dto.OrderResponse;
 
 public interface CreateOrderUseCase {
-    Order execute(CreateOrderRequest request);
+    OrderResponse createOrder(OrderRequest request);
 }
