@@ -5,7 +5,6 @@ import com.example.shippingservice.domain.model.Shipment;
 import org.slf4j.*;
 import org.springframework.stereotype.Service;
 import java.time.Instant; import java.util.UUID;
-
 @Service
 public class CreateShipmentUseCase {
     private static final Logger log = LoggerFactory.getLogger(CreateShipmentUseCase.class);
@@ -15,7 +14,6 @@ public class CreateShipmentUseCase {
     public CreateShipmentUseCase(ShipmentRepositoryPort r, EventPublisherPort p, OrderReadinessPort rd) {
         repo=r; publisher=p; readiness=rd;
     }
-
     public synchronized void onPaymentCompleted(UUID orderId) {
         readiness.markPaymentCompleted(orderId);
         tryShip(orderId);
@@ -24,7 +22,6 @@ public class CreateShipmentUseCase {
         readiness.markStockReserved(orderId);
         tryShip(orderId);
     }
-
     private void tryShip(UUID orderId) {
         if (!readiness.isReady(orderId)) return;
         if (repo.findByOrderId(orderId).isPresent()) return;
