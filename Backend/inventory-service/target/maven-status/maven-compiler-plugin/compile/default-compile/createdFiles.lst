@@ -1,0 +1,14 @@
+com\assignment\inventory\infrastructure\persistence\InventoryEntity.class
+com\assignment\inventory\domain\event\StockReserved.class
+com\assignment\inventory\InventoryServiceApplication.class
+com\assignment\inventory\application\dto\OrderCreatedEvent.class
+com\assignment\inventory\domain\event\StockFailed.class
+com\assignment\inventory\infrastructure\messaging\OrderEventListener.class
+com\assignment\inventory\infrastructure\persistence\InventoryRepositoryImpl.class
+com\assignment\inventory\application\usecase\ReserveStockUseCase.class
+com\assignment\inventory\infrastructure\config\RabbitMQConfig.class
+com\assignment\inventory\infrastructure\messaging\EventPublisher.class
+com\assignment\inventory\domain\model\Inventory.class
+com\assignment\inventory\presentation\controller\InventoryController.class
+com\assignment\inventory\domain\repository\InventoryRepository.class
+com\assignment\inventory\infrastructure\persistence\JpaInventoryRepository.class

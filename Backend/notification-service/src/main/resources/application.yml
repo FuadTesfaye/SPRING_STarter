@@ -1,0 +1,36 @@
+server:
+  port: 8086
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: guest
+    password: guest
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+notification:
+  mail:
+    from: ${MAIL_USERNAME:noreply@ticketbooking.com}
+    enabled: ${MAIL_ENABLED:false}   # set true in docker-compose when credentials are provided
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

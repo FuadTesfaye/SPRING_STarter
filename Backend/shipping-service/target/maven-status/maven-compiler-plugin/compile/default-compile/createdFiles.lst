@@ -1,0 +1,14 @@
+com\assignment\shipping\application\dto\PaymentCompletedEvent.class
+com\assignment\shipping\application\dto\StockReservedEvent.class
+com\assignment\shipping\infrastructure\persistence\ShipmentEntity.class
+com\assignment\shipping\presentation\controller\ShippingController.class
+com\assignment\shipping\infrastructure\messaging\ShippingEventListener.class
+com\assignment\shipping\domain\event\ShipmentCreated.class
+com\assignment\shipping\infrastructure\config\RabbitMQConfig.class
+com\assignment\shipping\infrastructure\messaging\EventPublisher.class
+com\assignment\shipping\application\usecase\CreateShipmentUseCase.class
+com\assignment\shipping\infrastructure\persistence\JpaShipmentRepository.class
+com\assignment\shipping\infrastructure\persistence\ShipmentRepositoryImpl.class
+com\assignment\shipping\domain\model\Shipment.class
+com\assignment\shipping\domain\repository\ShipmentRepository.class
+com\assignment\shipping\ShippingServiceApplication.class

@@ -1,0 +1,14 @@
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\application\dto\StockReservedEvent.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\presentation\controller\ShippingController.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\ShippingServiceApplication.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\persistence\ShipmentEntity.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\config\RabbitMQConfig.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\application\dto\PaymentCompletedEvent.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\domain\event\ShipmentCreated.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\messaging\EventPublisher.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\application\usecase\CreateShipmentUseCase.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\domain\repository\ShipmentRepository.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\persistence\JpaShipmentRepository.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\messaging\ShippingEventListener.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\infrastructure\persistence\ShipmentRepositoryImpl.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\shipping-service\src\main\java\com\assignment\shipping\domain\model\Shipment.java

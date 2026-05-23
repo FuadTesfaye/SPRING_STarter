@@ -1,0 +1,17 @@
+com\assignment\order\domain\event\OrderCreated.class
+com\assignment\order\application\usecase\GetOrdersUseCase.class
+com\assignment\order\infrastructure\config\RabbitMQConfig.class
+com\assignment\order\infrastructure\persistence\JpaOrderRepository.class
+com\assignment\order\OrderServiceApplication.class
+com\assignment\order\domain\repository\OrderRepository.class
+com\assignment\order\application\dto\CreateOrderRequest.class
+com\assignment\order\infrastructure\messaging\EventPublisher.class
+com\assignment\order\domain\model\Order.class
+com\assignment\order\infrastructure\persistence\OrderEntity.class
+com\assignment\order\application\dto\OrderResponse.class
+com\assignment\order\infrastructure\persistence\OrderRepositoryImpl.class
+com\assignment\order\presentation\controller\OrderController.class
+com\assignment\order\infrastructure\catalogue\EventCatalogue$EventInfo.class
+com\assignment\order\application\usecase\GetEventsUseCase.class
+com\assignment\order\application\usecase\CreateOrderUseCase.class
+com\assignment\order\infrastructure\catalogue\EventCatalogue.class

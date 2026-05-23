@@ -1,0 +1,14 @@
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\domain\event\StockReserved.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\presentation\controller\InventoryController.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\persistence\InventoryRepositoryImpl.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\messaging\EventPublisher.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\domain\event\StockFailed.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\InventoryServiceApplication.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\domain\repository\InventoryRepository.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\application\usecase\ReserveStockUseCase.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\messaging\OrderEventListener.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\persistence\InventoryEntity.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\domain\model\Inventory.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\config\RabbitMQConfig.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\infrastructure\persistence\JpaInventoryRepository.java
+C:\Users\Philemon Daniel\Desktop\jjhu\Backend\inventory-service\src\main\java\com\assignment\inventory\application\dto\OrderCreatedEvent.java
