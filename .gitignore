@@ -1,0 +1,62 @@
+# ========================
+# Java / Maven
+# ========================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+.mvn/wrapper/maven-wrapper.jar
+
+# ========================
+# Spring Boot
+# ========================
+application-local.yml
+application-local.properties
+
+# ========================
+# Node / Frontend
+# ========================
+node_modules/
+dist/
+.cache/
+.parcel-cache/
+frontend/dist/
+frontend/.vite/
+
+# ========================
+# IDE / Editor
+# ========================
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+spring.log
+
+# ========================
+# Environment / Secrets
+# ========================
+.env
+.env.local
+.env.*.local
+*.env
+
+# ========================
+# OS
+# ========================
+Desktop.ini
+ehthumbs.db

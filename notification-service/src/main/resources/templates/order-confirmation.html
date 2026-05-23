@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - E-COM</title>
+    <style>
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d0f14;
+            color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #12151c;
+            border-radius: 20px;
+            border: 1px solid #1e2530;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            color: #e0e7ff;
+            margin: 10px 0 0 0;
+            font-size: 16px;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #f3f4f6;
+            margin-bottom: 20px;
+        }
+        .intro-text {
+            color: #9ca3af;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .details-card {
+            background-color: #1a1e27;
+            border-radius: 12px;
+            border: 1px solid #272f3e;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #272f3e;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .detail-row:first-child {
+            padding-top: 0;
+        }
+        .detail-label {
+            color: #9ca3af;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .detail-value {
+            color: #f3f4f6;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .detail-value.highlight {
+            color: #22c55e;
+            font-size: 16px;
+        }
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 14px 30px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+        .footer {
+            background-color: #0b0d12;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #1e2530;
+        }
+        .footer p {
+            color: #6b7280;
+            font-size: 13px;
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer a:hover {
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for shopping at E-COM premium store</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="greeting">Hello, {{customerName}}!</div>
+            <div class="intro-text">
+                Your premium purchase has been successfully processed! Below are the full transaction details for your records. We are already preparing your order for shipment.
+            </div>
+
+            <!-- Details Card -->
+            <div class="details-card">
+                <div class="detail-row">
+                    <span class="detail-label">Order ID</span>
+                    <span class="detail-value" style="font-family: monospace;">{{orderId}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Total Amount Paid</span>
+                    <span class="detail-value highlight">${{totalAmount}}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Payment Status</span>
+                    <span class="detail-value">
+                        <span class="status-badge">SUCCESSFUL</span>
+                    </span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Delivery Status</span>
+                    <span class="detail-value">PREPARING FOR DISPATCH</span>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="button-container">
+                <a href="http://localhost:5173/orders" class="btn-primary">Track Your Order</a>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2026 E-COM Inc. All rights reserved.</p>
+            <p>You received this email because you made a purchase on E-COM.</p>
+            <p><a href="http://localhost:5173">Visit Store</a> | <a href="mailto:support@ecom.com">Support</a></p>
+        </div>
+    </div>
+</body>
+</html>
