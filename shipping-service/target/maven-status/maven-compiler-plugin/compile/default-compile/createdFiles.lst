@@ -1,0 +1,16 @@
+com\school\shipping\infrastructure\persistence\ShipmentJpaRepository.class
+com\school\shipping\presentation\controller\ShippingController.class
+com\school\shipping\infrastructure\persistence\ShipmentRepositoryImpl.class
+com\school\shipping\infrastructure\messaging\RabbitMQEventPublisher.class
+com\school\shipping\application\port\ShipmentRepository.class
+com\school\shipping\ShippingServiceApplication.class
+com\school\shipping\domain\entity\Shipment.class
+com\school\shipping\application\service\ShippingService.class
+com\school\shipping\application\port\EventPublisher.class
+com\school\shipping\infrastructure\messaging\PaymentCompletedEventDto.class
+com\school\shipping\infrastructure\config\RabbitMQConfig.class
+com\school\shipping\infrastructure\persistence\ShipmentJpaEntity.class
+com\school\shipping\domain\event\ShipmentCreatedEvent.class
+com\school\shipping\infrastructure\messaging\StockReservedEventDto.class
+com\school\shipping\infrastructure\messaging\ShippingEventListener.class
+com\school\shipping\infrastructure\config\SwaggerConfig.class

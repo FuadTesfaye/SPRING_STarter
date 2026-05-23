@@ -1,0 +1,7 @@
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\NotificationServiceApplication.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\application\service\NotificationService.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\presentation\controller\NotificationController.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\infrastructure\config\SwaggerConfig.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\domain\event\GenericEventDto.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\infrastructure\config\RabbitMQConfig.java
+F:\projects\leo-main\backend\notification-service\src\main\java\com\school\notification\infrastructure\messaging\NotificationEventListener.java

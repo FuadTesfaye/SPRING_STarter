@@ -1,0 +1,16 @@
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\RabbitMQEventPublisher.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentRepositoryImpl.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\domain\entity\Shipment.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\PaymentCompletedEventDto.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\port\ShipmentRepository.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\ShippingEventListener.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentJpaEntity.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\domain\event\ShipmentCreatedEvent.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\service\ShippingService.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\presentation\controller\ShippingController.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\ShippingServiceApplication.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\config\SwaggerConfig.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\application\port\EventPublisher.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\persistence\ShipmentJpaRepository.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\messaging\StockReservedEventDto.java
+F:\projects\leo-main\backend\shipping-service\src\main\java\com\school\shipping\infrastructure\config\RabbitMQConfig.java

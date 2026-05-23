@@ -1,0 +1,16 @@
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\event\StockReservedEvent.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\port\EventPublisher.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationRepositoryImpl.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\RabbitMQEventPublisher.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\config\RabbitMQConfig.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\port\StockReservationRepository.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\OrderCreatedEventDto.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\config\SwaggerConfig.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\presentation\controller\InventoryController.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\application\service\InventoryService.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\entity\StockReservation.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationJpaEntity.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\InventoryServiceApplication.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\domain\event\StockFailedEvent.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\messaging\InventoryEventListener.java
+F:\projects\leo-main\backend\inventory-service\src\main\java\com\school\inventory\infrastructure\persistence\StockReservationJpaRepository.java
