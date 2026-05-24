@@ -1,0 +1,5 @@
+package com.ecom.product.application.dto;
+
+import java.math.BigDecimal;
+
+public record ProductRequest(String name, String description, BigDecimal price, String category, int stockQuantity) {}
