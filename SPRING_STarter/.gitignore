@@ -1,0 +1,22 @@
+# Compiled output
+target/
+*.class
+*.jar
+*.war
+
+# Maven wrapper binary
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.env
+application-local.yml
+application-local.properties
