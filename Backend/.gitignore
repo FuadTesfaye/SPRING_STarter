@@ -1,0 +1,20 @@
+# Environment / secrets — never commit real credentials
+.env
+.env.*
+!.env.example
+
+# Maven build output
+target/
+*.class
+*.jar
+*.war
+*.jar.original
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
